@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Authentication</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="intro-section">
+        <p class="eyebrow">Login Authentication</p>
+        <h1>Register, log in, and access a secured page.</h1>
+        <p>
+          This beginner project uses JavaScript to create a simple authentication
+          flow with registration, login validation, logout, and a protected dashboard.
+        </p>
+      </section>
+
+      <section class="auth-layout">
+        <div class="auth-card" id="auth-card">
+          <div class="tab-buttons" role="tablist" aria-label="Authentication tabs">
+            <button class="tab-button active" type="button" id="login-tab">Login</button>
+            <button class="tab-button" type="button" id="register-tab">Register</button>
+          </div>
+
+          <form class="auth-form active" id="login-form">
+            <h2>Welcome Back</h2>
+            <label for="login-email">
+              Email
+              <input id="login-email" type="email" placeholder="you@example.com" required />
+            </label>
+            <label for="login-password">
+              Password
+              <input id="login-password" type="password" placeholder="Enter password" required />
+            </label>
+            <button class="primary-button" type="submit">Login</button>
+          </form>
+
+          <form class="auth-form" id="register-form">
+            <h2>Create Account</h2>
+            <label for="register-name">
+              Full Name
+              <input id="register-name" type="text" placeholder="Your name" required />
+            </label>
+            <label for="register-email">
+              Email
+              <input id="register-email" type="email" placeholder="you@example.com" required />
+            </label>
+            <label for="register-password">
+              Password
+              <input
+                id="register-password"
+                type="password"
+                placeholder="At least 6 characters"
+                minlength="6"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Register</button>
+          </form>
+
+          <p class="message" id="message" aria-live="polite"></p>
+        </div>
+
+        <div class="dashboard-card hidden" id="dashboard-card">
+          <p class="eyebrow">Secured Page</p>
+          <h2 id="dashboard-title">Dashboard</h2>
+          <p>
+            You can see this page because you are logged in. In a real app, this
+            protected content would come from a backend server after checking a session.
+          </p>
+
+          <div class="user-details">
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+          </div>
+
+          <button class="secondary-button" type="button" id="logout-button">Logout</button>
+        </div>
+      </section>
+
+      <section class="details-section">
+        <article>
+          <h2>Project Includes</h2>
+          <ul>
+            <li>User registration</li>
+            <li>Login authentication</li>
+            <li>Protected dashboard page</li>
+            <li>Logout functionality</li>
+            <li>Basic password hashing for demo storage</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Demo Account</h2>
+          <p>
+            Register a new account first, then log in with the same email and password.
+            Your demo account is saved in this browser only.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
